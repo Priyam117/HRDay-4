@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Day 4 classwork</title>
+</head>
+
+<body>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <div id="root"></div>
+
+  <script type="text/babel">
+    function Header() {
+      const personalInfo = {
+        name: 'Priyam Kumar Gautam',
+        title: 'Web Developer',
+        summary: 'Experienced web developer with expertise in React, JavaScript, and front-end technologies.',
+        email: 'priyam@example.com',
+        phone: '+123 456 7890',
+        address: '123 Main St, City, Country',
+      };
+
+      return (
+        <div className="header">
+          <div className="profile-img">
+            <img src="data:image/png;base64,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" alt=""></img>
+          </div>
+          <div className="info">
+            <h1>{personalInfo.name}</h1>
+            <h3>{personalInfo.title}</h3>
+          </div>
+          <div class="summary">
+            <p>{personalInfo.summary}</p>
+            <p>Email: {personalInfo.email}</p>
+            <p>Phone: {personalInfo.phone}</p>
+            <p>Address: {personalInfo.address}</p>
+          </div>
+        </div>
+      );
+    }
+
+    function Resume() {
+      return (
+        <Header />
+      );
+    }
+
+    const container = document.getElementById('root');
+    const root = ReactDOM.createRoot(container);
+    root.render(<Resume />);
+  </script>
+</body>
+
+</html>
